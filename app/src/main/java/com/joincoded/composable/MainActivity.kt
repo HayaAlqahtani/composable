@@ -49,9 +49,9 @@ fun TrueFalseGame() {
 
     if (questions.isEmpty()) {
         questions = listOf(
-            Question("can count till 10?", true),
-            Question("the water has a blue color", false),
-            Question("the sky is blue?", true),
+            Question("I WORK FOR KFH", true),
+            Question("I AM 25 YEARS OLD", false),
+            Question("I HAVE A DAUGHTER", true),
         )
     }
 
@@ -70,7 +70,6 @@ fun TrueFalseGame() {
 
         if (showResetButton) {
             Button(onClick = {
-                // Show the final score and restart button
                 currentQuestionIndex.value = 0
                 userScore.value = 0
                 showAnswerOptionsRow = true
@@ -79,15 +78,13 @@ fun TrueFalseGame() {
                 Text(text = "Reset Game")
             }
         }
-//the condition of the correct answer
         if (AnsrCorrect && showFeedback ) {
-            AnswerFeedback("Correct!", MaterialTheme.colorScheme.secondary)
+            AnswerFeedback("THIS IS TRUE!", MaterialTheme.colorScheme.secondary)
             Text(text = "Score: ${userScore.value}")
             Button(
                 onClick = {
                     showFeedback = false
                     showAnswerOptionsRow = true
-                    // Move to the next question or show the final score
                     if (currentQuestionIndex.value == questions.size - 1) {
                         showResetButton = true
                         AnsrCorrect = false
@@ -107,10 +104,8 @@ fun TrueFalseGame() {
                 Text(text = "Next Question")
             }
         } else if (!AnsrCorrect && showFeedback) {
-            // Keep true and false buttons visible
             showFeedback = true
-            // Show feedback for wrong answer
-            AnswerFeedback("Wrong!", MaterialTheme.colorScheme.error)
+            AnswerFeedback("THIS IS WRONG!", MaterialTheme.colorScheme.error)
 
         }
 
@@ -145,10 +140,7 @@ fun TrueFalseGame() {
     }
 }
 
-//@Composable
-//fun nextQuestionButton(){
-//
-//}
+
 @Composable
 fun TrueFalseButton(text: String, UserAnsr: () -> Unit) {
     Button(
@@ -176,7 +168,6 @@ fun AnswerFeedback(message: String, backgroundColor: androidx.compose.ui.graphic
             .background(backgroundColor)
             .padding(16.dp),
         Alignment.Center
-        // contentAlignment = Alignment.Center
 
     ) {
         Column(
