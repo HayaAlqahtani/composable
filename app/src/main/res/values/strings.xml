@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Composable</string>
+    <string name="i_work_for_kfh">I WORK FOR KFH</string>
+    <string name="i_am_25_years_old">I AM 25 YEARS OLD</string>
+    <string name="i_have_a_daughter">I HAVE A DAUGHTER</string>
+    <string name="this_is_correct">This is Correct!</string>
+    <string name="next_question">Next Question</string>
+    <string name="that_is_wrong">That is Wrong!</string>
+    <string name="true">True</string>
+    <string name="false">False</string>
+    <string name="restart">Restart</string>
 </resources>
